@@ -1,0 +1,34 @@
+﻿<div class="screen-overlay"></div>
+<aside class="navbar-aside" id="offcanvas_aside">
+    <div class="aside-top">
+        <a href="index.html" class="brand-wrap">
+            <img src="~/admin/assets/imgs/theme/logo.svg" class="logo" alt="Evara Dashboard">
+        </a>
+        <div>
+            <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
+        </div>
+    </div>
+    <nav>
+        <ul class="menu-aside">
+            <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Dashboard" ? "active" : "")">
+                <a asp-area="Admin" asp-controller="Dashboard" aps-action="Index" class="menu-link">
+                    <i class="icon material-icons md-home"></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Products" ? "active" : "")">
+                <a class="menu-link" href="page-blank.html">
+                    <i class="icon material-icons md-shopping_bag"></i>
+                    <span class="text"> Products </span>
+                </a>
+            </li>
+
+            <li class="menu-item @(ViewContext.RouteData.Values["controller"].ToString() == "Sliders" ? "active" : "")">
+                <a asp-area="Admin" asp-controller="Sliders" asp-action="Index" class="menu-link">
+                    <i class="icon material-icons md-local_offer"></i>
+                    <span class="text"> Slider </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>

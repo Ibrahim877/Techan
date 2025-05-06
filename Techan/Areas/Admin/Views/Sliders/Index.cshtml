@@ -1,0 +1,83 @@
+﻿@{
+	Layout = "../Shared/_Layout.cshtml";
+	ViewData["Title"] = "Techan | Sliders";
+}
+@model List<Techan.Models.Slider>
+<style>
+	.img-thumbnail {
+		width: auto;
+		height: 100px;
+	}
+</style>
+@Html.Partial("_DeleteModal")
+<section class="content-main">
+	<div class="content-header">
+		<h2 class="content-title">Sliders</h2>
+		<div>
+			<a asp-area="Admin" asp-controller="Sliders" asp-action="Create" class="btn btn-primary">Create new</a>
+		</div>
+	</div>
+	@if (TempData["Success"] != null)
+	{
+		<div class="alert alert-success">
+			@TempData["Success"]
+		</div>
+	}
+	@if (TempData["Error"] != null)
+	{
+		<div class="alert alert-danger">
+			@TempData["Error"]
+		</div>
+	}
+
+	<div class="card mt-3">
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>№</th>
+							<th>Name</th>
+							<th>Image</th>
+							<th>Created at</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						@for (int i = 0; i < Model.Count; i++)
+						{
+							<tr>
+								<td class="align-middle">@(i + 1)</td>
+								<td class="align-middle">@Model[i].BrandName</td>
+								<td class="align-middle">
+									<img src="@Model[i].BrandImage"
+										 class="img-thumbnail" />
+								</td>
+								<td>
+									@Model[i].CreatedAt
+								</td>
+								<td class="align-middle">
+									<a asp-area="Admin" asp-controller="Sliders" asp-action="Update" asp-route-id="@Model[i].Id" class="btn btn-primary">Edit</a>
+									<button type="button" class="btn btn-danger open-delete-modal" data-id="@Model[i].Id" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const deleteButtons = document.querySelectorAll('.open-delete-modal');
+		const hiddenInput = document.getElementById('deleteSliderId');
+
+		deleteButtons.forEach(button => {
+			button.addEventListener('click', function () {
+				const sliderId = this.getAttribute('data-id');
+				hiddenInput.value = sliderId;
+			});
+		});
+	});
+</script>
