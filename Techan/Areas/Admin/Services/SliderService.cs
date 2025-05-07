@@ -11,50 +11,23 @@ namespace Techan.Areas.Admin.Services
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _env;
-        // private readonly AppDbContext _context;
 
         public SliderService(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
             _env = env;
-            // _context = context;
         }
 
         public async Task<Slider> CreateAsync(SliderViewModel model)
         {
-            // ✅ Validasiyalar
-            if (string.IsNullOrWhiteSpace(model.BrandName))
-                throw new ArgumentException("Brand adı boş və ya yalnız boşluq ola bilməz.");
+            await ValidateSliderDataAsync(model.BrandName, model.BrandImage);
 
-            if (model.BrandImage == null)
-                throw new ArgumentException("Şəkil faylı tələb olunur.");
+            string savedPath = await UploadFileAsync(model.BrandImage);
 
-            string[] allowedTypes = { "image/jpeg", "image/png", "image/webp" };
-            if (!allowedTypes.Contains(model.BrandImage.ContentType))
-                throw new ArgumentException("Yalnız .jpg, .png və .webp şəkillər qəbul olunur.");
-
-            const int maxFileSize = 2 * 1024 * 1024; // 2 MB
-            if (model.BrandImage.Length > maxFileSize)
-                throw new ArgumentException("Şəklin ölçüsü 2MB-dan çox ola bilməz.");
-
-            // ✅ Faylı yaddaşa yaz
-            string uploadsFolder = Path.Combine(_env.WebRootPath, "uploads", "sliders");
-            if (!Directory.Exists(uploadsFolder))
-                Directory.CreateDirectory(uploadsFolder);
-
-            string uniqueName = Guid.NewGuid().ToString() + Path.GetExtension(model.BrandImage.FileName);
-            string filePath = Path.Combine(uploadsFolder, uniqueName);
-
-            using (var stream = new FileStream(filePath, FileMode.Create))
-            {
-                await model.BrandImage.CopyToAsync(stream);
-            }
-
-            // ✅ Slider obyektini yarat
             var slider = new Slider
             {
                 BrandName = model.BrandName.Trim(),
-                BrandImage = "/uploads/sliders/" + uniqueName,
+                BrandImage = savedPath,
                 CreatedAt = DateTime.Now
             };
 
@@ -77,14 +50,10 @@ namespace Techan.Areas.Admin.Services
             if (slider == null)
                 throw new ArgumentException("Slide tapılmadı");
 
-            // Faylı sil
-            string filePath = Path.Combine(_env.WebRootPath, slider.BrandImage.TrimStart('/').Replace('/', Path.DirectorySeparatorChar));
-            if (System.IO.File.Exists(filePath))
-            {
-                System.IO.File.Delete(filePath);
-            }
 
-            // DB-dən sil
+            DeleteFile(slider.BrandImage);
+
+
             _context.Sliders.Remove(slider);
             await _context.SaveChangesAsync();
         }
@@ -100,49 +69,22 @@ namespace Techan.Areas.Admin.Services
             if (slider == null)
                 throw new ArgumentException("Slider tapılmadı.");
 
-            bool hasName = !string.IsNullOrWhiteSpace(model.BrandName);
-            bool hasImage = model.BrandImage != null;
 
-            if (!hasName && !hasImage)
-                throw new ArgumentException("Ən azı bir dəyişiklik tələb olunur (ad və ya şəkil).");
+            await ValidateSliderDataAsync(model.BrandName, model.BrandImage, model.Id);
 
-            if (hasName)
-                slider.BrandName = model.BrandName.Trim();
+            slider.BrandName = model.BrandName;
 
-            if (hasImage)
+            if (model.BrandImage != null)
             {
-                // ✅ Validasiya
-                string[] allowedTypes = { "image/jpeg", "image/png", "image/webp" };
-                if (!allowedTypes.Contains(model.BrandImage.ContentType))
-                    throw new ArgumentException("Yalnız .jpg, .png və .webp şəkillər qəbul olunur.");
+                string savedPath = await UploadFileAsync(model.BrandImage);
 
-                const int maxFileSize = 2 * 1024 * 1024; // 2MB
-                if (model.BrandImage.Length > maxFileSize)
-                    throw new ArgumentException("Şəkil 2MB-dan böyük ola bilməz.");
 
-                // ✅ Yeni şəkili yaddaşa yaz
-                string uploadsFolder = Path.Combine(_env.WebRootPath, "uploads", "sliders");
-                if (!Directory.Exists(uploadsFolder))
-                    Directory.CreateDirectory(uploadsFolder);
-
-                string newFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.BrandImage.FileName);
-                string newFilePath = Path.Combine(uploadsFolder, newFileName);
-
-                using (var stream = new FileStream(newFilePath, FileMode.Create))
-                {
-                    await model.BrandImage.CopyToAsync(stream);
-                }
-
-                // ✅ Köhnə şəkili sil
                 if (!string.IsNullOrWhiteSpace(slider.BrandImage))
                 {
-                    string oldImagePath = Path.Combine(_env.WebRootPath, slider.BrandImage.TrimStart('/'));
-                    if (System.IO.File.Exists(oldImagePath))
-                        System.IO.File.Delete(oldImagePath);
+                    DeleteFile(slider.BrandImage);
                 }
 
-                // Yeni şəkil path
-                slider.BrandImage = "/uploads/sliders/" + newFileName;
+                slider.BrandImage = savedPath;
             }
 
             slider.CreatedAt = DateTime.Now;
@@ -150,6 +92,68 @@ namespace Techan.Areas.Admin.Services
             _context.Sliders.Update(slider);
             await _context.SaveChangesAsync();
         }
+
+        public void DeleteFile(string relativePath)
+        {
+            string fullPath = Path.Combine(_env.WebRootPath, relativePath.TrimStart('/'));
+
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+            }
+        }
+
+        public async Task ValidateSliderDataAsync(string BrandName, IFormFile? BrandImage, int? id = null)
+        {
+            string[] allowedTypes = { "image/jpeg", "image/png", "image/webp" };
+            const int maxFileSize = 2 * 1024 * 1024; // 2 MB
+
+            if (string.IsNullOrWhiteSpace(BrandName))
+                throw new ArgumentException("Brand adı boş və ya yalnız boşluq ola bilməz.");
+
+
+            bool isExist = false;
+
+            if (id == null)
+                isExist = await _context.Sliders.AnyAsync(s => s.BrandName.ToLower().Trim() == BrandName.ToLower().Trim());
+            else
+                isExist = await _context.Sliders.AnyAsync(s => s.Id != id && s.BrandName.ToLower().Trim() == BrandName.ToLower().Trim());
+
+
+            if (isExist)
+                throw new ArgumentException("Bu adda artıq bir slide mövcuddur.");
+
+            if (BrandImage == null && id == null)
+                throw new ArgumentException("Şəkil faylı tələb olunur.");
+
+            if (BrandImage != null)
+                if (BrandImage.Length > maxFileSize)
+                    throw new ArgumentException("Şəklin ölçüsü 2MB-dan çox ola bilməz.");
+
+            if (BrandImage != null)
+                if (!allowedTypes.Contains(BrandImage.ContentType))
+                    throw new ArgumentException("Yalnız .jpg, .png və .webp şəkillər qəbul olunur.");
+
+        }
+
+
+        public async Task<string> UploadFileAsync(IFormFile file)
+        {
+            string uploadsFolder = Path.Combine(_env.WebRootPath, "uploads", "sliders");
+            if (!Directory.Exists(uploadsFolder))
+                Directory.CreateDirectory(uploadsFolder);
+
+            string uniqueName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+            string filePath = Path.Combine(uploadsFolder, uniqueName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            return $"/uploads/sliders/{uniqueName}";
+        }
+
 
     }
 }

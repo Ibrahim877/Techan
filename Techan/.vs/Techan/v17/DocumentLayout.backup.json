@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\techan\\Techan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|c:\\xampp\\htdocs\\techan\\techan\\areas\\admin\\services\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|solutionrelative:areas\\admin\\services\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|c:\\xampp\\htdocs\\techan\\techan\\areas\\admin\\services\\interfaces\\isliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|solutionrelative:areas\\admin\\services\\interfaces\\isliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|c:\\xampp\\htdocs\\techan\\techan\\areas\\admin\\controllers\\sliderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|solutionrelative:areas\\admin\\controllers\\sliderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|c:\\xampp\\htdocs\\techan\\techan\\areas\\admin\\views\\sliders\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|solutionrelative:areas\\admin\\views\\sliders\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|c:\\xampp\\htdocs\\techan\\techan\\areas\\admin\\services\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|solutionrelative:areas\\admin\\services\\sliderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|c:\\xampp\\htdocs\\techan\\techan\\areas\\admin\\views\\sliders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|solutionrelative:areas\\admin\\views\\sliders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|c:\\xampp\\htdocs\\techan\\techan\\areas\\admin\\viewmodels\\sliderupdateviewmodel .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|solutionrelative:areas\\admin\\viewmodels\\sliderupdateviewmodel .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|c:\\xampp\\htdocs\\techan\\techan\\areas\\admin\\views\\sliders\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|solutionrelative:areas\\admin\\views\\sliders\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D8A7D66-EC1F-4923-A361-720143DD34DF}|Techan.csproj|c:\\xampp\\htdocs\\techan\\techan\\areas\\admin\\views\\sliders\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -38,63 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SliderUpdateViewModel .cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\ViewModels\\SliderUpdateViewModel .cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\ViewModels\\SliderUpdateViewModel .cs",
-              "ToolTip": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\ViewModels\\SliderUpdateViewModel .cs",
-              "RelativeToolTip": "Areas\\Admin\\ViewModels\\SliderUpdateViewModel .cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ISliderService.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Services\\Interfaces\\ISliderService.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Services\\Interfaces\\ISliderService.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Services\\Interfaces\\ISliderService.cs",
+              "RelativeToolTip": "Areas\\Admin\\Services\\Interfaces\\ISliderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T18:53:21.44Z",
+              "WhenOpened": "2025-05-07T17:25:49.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "SliderService.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Services\\SliderService.cs",
               "RelativeDocumentMoniker": "Areas\\Admin\\Services\\SliderService.cs",
               "ToolTip": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Services\\SliderService.cs",
               "RelativeToolTip": "Areas\\Admin\\Services\\SliderService.cs",
-              "ViewState": "AgIAAIAAAAAAAAAAAAAmwJgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAswFcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T18:52:46.943Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ISliderService.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Services\\Interfaces\\ISliderService.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Services\\Interfaces\\ISliderService.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Services\\Interfaces\\ISliderService.cs",
-              "RelativeToolTip": "Areas\\Admin\\Services\\Interfaces\\ISliderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T18:52:36.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SlidersController.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Controllers\\SlidersController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\SlidersController.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Controllers\\SlidersController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\SlidersController.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAmwGsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T18:47:41.891Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Views\\Sliders\\Create.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Sliders\\Create.cshtml",
@@ -102,8 +68,7 @@
               "RelativeToolTip": "Areas\\Admin\\Views\\Sliders\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-06T18:47:33.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T18:47:33.507Z"
             },
             {
               "$type": "Document",
@@ -113,23 +78,21 @@
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Sliders\\Update.cshtml",
               "ToolTip": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Views\\Sliders\\Update.cshtml",
               "RelativeToolTip": "Areas\\Admin\\Views\\Sliders\\Update.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-06T18:47:13.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T18:47:13.204Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Views\\Sliders\\Index.cshtml",
               "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Sliders\\Index.cshtml",
               "ToolTip": "C:\\xampp\\htdocs\\techan\\Techan\\Areas\\Admin\\Views\\Sliders\\Index.cshtml",
               "RelativeToolTip": "Areas\\Admin\\Views\\Sliders\\Index.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-06T18:47:23.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-06T18:47:23.861Z"
             }
           ]
         }

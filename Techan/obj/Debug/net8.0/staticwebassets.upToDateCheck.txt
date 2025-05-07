@@ -349,5 +349,6 @@ wwwroot\front\assets\sass\pages\_page.scss
 wwwroot\front\assets\sass\pages\_shop.scss
 wwwroot\front\assets\sass\themes\_default.scss
 wwwroot\front\assets\sass\vendors\_vendors-import.scss
-wwwroot\uploads\sliders\0d437a29-8841-4fa6-aacf-b895943598ab.jpg
+wwwroot\uploads\sliders\02d28116-ffe5-4dd7-af0d-ad31cd95a0c4.jpg
+wwwroot\uploads\sliders\ea6929b5-9002-4be4-a572-f8b9b309ab4f.jpg
 wwwroot\uploads\sliders\eb8ce2a8-53be-4290-bddb-2e78481ffedf.jpg

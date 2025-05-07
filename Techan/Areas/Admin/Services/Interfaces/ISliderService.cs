@@ -17,5 +17,10 @@ namespace Techan.Areas.Admin.Services.Interfaces
 
         Task UpdateAsync(SliderUpdateViewModel model);
 
+        void DeleteFile(string relativePath);
+
+        Task ValidateSliderDataAsync(string BrandName, IFormFile? BrandImage, int? id = null);
+
+        Task<string> UploadFileAsync(IFormFile file);
     }
 }

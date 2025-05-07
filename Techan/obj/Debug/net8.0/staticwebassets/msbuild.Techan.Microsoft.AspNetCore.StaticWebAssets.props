@@ -6336,23 +6336,41 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Techan.i6ed8mb13t.bundle.scp.css'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\0d437a29-8841-4fa6-aacf-b895943598ab.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\02d28116-ffe5-4dd7-af0d-ad31cd95a0c4.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Techan</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/Techan</BasePath>
-      <RelativePath>uploads/sliders/0d437a29-8841-4fa6-aacf-b895943598ab.jpg</RelativePath>
+      <RelativePath>uploads/sliders/02d28116-ffe5-4dd7-af0d-ad31cd95a0c4.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>i1ytn8g993</Fingerprint>
-      <Integrity>liiO3J7VUQowBSMhd9Tpies0VMXJQ3I5HQdwaWl3e8A=</Integrity>
+      <Fingerprint>ry478zz6s5</Fingerprint>
+      <Integrity>HceU2gNumpK8hyZtLJrX2iCFskmTfW6Rk7tnx5TIP3Q=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\0d437a29-8841-4fa6-aacf-b895943598ab.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\02d28116-ffe5-4dd7-af0d-ad31cd95a0c4.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\ea6929b5-9002-4be4-a572-f8b9b309ab4f.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Techan</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Techan</BasePath>
+      <RelativePath>uploads/sliders/ea6929b5-9002-4be4-a572-f8b9b309ab4f.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wekuva8dk7</Fingerprint>
+      <Integrity>2Gm8QVwnXbERgUsJ5c12lBG9Kx89mWqgqT5H59/MlUU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\ea6929b5-9002-4be4-a572-f8b9b309ab4f.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\sliders\eb8ce2a8-53be-4290-bddb-2e78481ffedf.jpg'))">
       <SourceType>Package</SourceType>

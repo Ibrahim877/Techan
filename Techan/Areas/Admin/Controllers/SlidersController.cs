@@ -97,6 +97,7 @@ namespace Techan.Areas.Admin.Controllers
             try
             {
                 await _sliderService.UpdateAsync(model);
+                TempData["Success"] = "Slayd uğurla güncəlləndi.";
             }
             catch (ArgumentException ex)
             {
